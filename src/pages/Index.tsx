@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -9,52 +8,92 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="section-padding flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-blue-50 to-white">
+      <section className="section-padding flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="text-center max-w-4xl mx-auto"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Kavish Shah</h1>
-          <h2 className="text-xl md:text-2xl text-gray-600 mb-6">
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
+            className="mb-8"
+          >
+            <img
+              src="https://media.licdn.com/dms/image/D4D03AQHh_7PdEKe3ew/profile-displayphoto-shrink_400_400/0/1691841096667?e=1714003200&v=beta&t=Qgy_-iHmXgOSJ2xGhbSBV4G7LN9hKX9Vj-0CwqkNSwQ"
+              alt="Kavish Shah"
+              className="w-32 h-32 rounded-full mx-auto border-4 border-white shadow-xl hover:scale-105 transition-transform duration-300"
+            />
+          </motion.div>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text"
+          >
+            Kavish Shah
+          </motion.h1>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="text-xl md:text-2xl text-gray-600 mb-6"
+          >
             Founder & AI Engineer | Generative AI & SaaS Entrepreneur
-          </h2>
-          <div className="flex flex-wrap justify-center gap-4 mb-8 text-gray-600">
-            <span>📍 Ahmedabad, India</span>
-            <span>📧 kavishmshah2004@gmail.com</span>
-            <span>📞 +91 8980579954</span>
-          </div>
-          <div className="flex flex-wrap gap-4 justify-center mb-8">
-            <Button asChild variant="outline" className="hover-scale">
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="flex flex-wrap justify-center gap-4 mb-8 text-gray-600"
+          >
+            <span className="flex items-center gap-2 bg-white/50 px-4 py-2 rounded-full backdrop-blur-sm">
+              📍 Ahmedabad, India
+            </span>
+            <span className="flex items-center gap-2 bg-white/50 px-4 py-2 rounded-full backdrop-blur-sm">
+              📧 kavishmshah2004@gmail.com
+            </span>
+            <span className="flex items-center gap-2 bg-white/50 px-4 py-2 rounded-full backdrop-blur-sm">
+              📞 +91 8980579954
+            </span>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            className="flex flex-wrap gap-4 justify-center mb-8"
+          >
+            <Button asChild variant="outline" className="hover-scale bg-white/50 backdrop-blur-sm">
               <a href="https://www.linkedin.com/in/kavish-on-ai/" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
               </a>
             </Button>
-            <Button asChild variant="outline" className="hover-scale">
+            <Button asChild variant="outline" className="hover-scale bg-white/50 backdrop-blur-sm">
               <a href="https://x.com/Kavish_On_AI" target="_blank" rel="noopener noreferrer">
                 <Twitter className="mr-2 h-4 w-4" /> Twitter
               </a>
             </Button>
-            <Button asChild variant="outline" className="hover-scale">
+            <Button asChild variant="outline" className="hover-scale bg-white/50 backdrop-blur-sm">
               <a href="https://www.youtube.com/@KavishOnAI" target="_blank" rel="noopener noreferrer">
                 <Youtube className="mr-2 h-4 w-4" /> YouTube
               </a>
             </Button>
-            <Button asChild variant="outline" className="hover-scale">
+            <Button asChild variant="outline" className="hover-scale bg-white/50 backdrop-blur-sm">
               <a href="mailto:kavishmshah2004@gmail.com">
-                <Mail className="mr-2 h-4 w-4" /> Email
+                <Mail className="mr-2 h-4 w-4" /> Email Me
               </a>
             </Button>
-          </div>
+          </motion.div>
         </motion.div>
       </section>
 
       {/* Professional Summary */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-gradient-to-br from-purple-50 to-indigo-50">
         <div className="max-w-4xl mx-auto">
-          <Card className="p-8 glass">
-            <h2 className="text-2xl font-bold mb-6">Professional Summary</h2>
+          <Card className="p-8 glass hover:shadow-2xl transition-shadow duration-300">
+            <h2 className="text-2xl font-bold mb-6 bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text">Professional Summary</h2>
             <div className="space-y-4 text-gray-700">
               <p>🚀 Founder at <strong>Dialoft AI</strong> – Empowering businesses with AI-driven telecalling solutions to transform customer interactions. Experienced in <strong>Generative AI, Deep Learning, NLP, Computer Vision, and Reinforcement Learning</strong>, with expertise in building scalable AI/ML systems.</p>
               <p>💡 Passionate about <strong>SaaS, AI-driven automation, and data analytics</strong>, leveraging cutting-edge AI technologies to enhance business efficiency.</p>
@@ -182,9 +221,9 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section className="section-padding bg-gray-50">
-        <h2 className="section-title">Featured Projects</h2>
+      {/* Projects Section - Enhanced */}
+      <section className="section-padding bg-gradient-to-br from-indigo-50 to-purple-50">
+        <h2 className="section-title bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text">Featured Projects</h2>
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           <Card className="p-6 glass hover-scale">
             <h3 className="text-xl font-semibold mb-2">Dialoft AI</h3>
@@ -194,7 +233,7 @@ const Index = () => {
             </p>
             <div className="flex gap-4">
               <Button asChild variant="outline" size="sm">
-                <a href="https://dialoft.ai" target="_blank" rel="noopener noreferrer">
+                <a href="https://dialoftai.com" target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="mr-2 h-4 w-4" /> Website
                 </a>
               </Button>
@@ -227,6 +266,35 @@ const Index = () => {
             <p className="text-gray-600 mb-4">AI Tool Directory</p>
             <p className="text-gray-700 mb-4">
               Built an AI tool directory that reached 150K+ views in 4 months.
+            </p>
+          </Card>
+
+          <Card className="p-6 glass hover-scale">
+            <h3 className="text-xl font-semibold mb-2">AI Movie Recommendation System</h3>
+            <p className="text-gray-600 mb-4">NLP-Based Recommendation Engine</p>
+            <p className="text-gray-700 mb-4">
+              NLP-based AI system that recommends movies based on user preferences.
+            </p>
+            <Button asChild variant="outline" size="sm">
+              <a href="https://youtu.be/c_xWj8Gtom8?si=gjXsOr2_jVrQxnnl" target="_blank" rel="noopener noreferrer">
+                <Youtube className="mr-2 h-4 w-4" /> Demo
+              </a>
+            </Button>
+          </Card>
+
+          <Card className="p-6 glass hover-scale">
+            <h3 className="text-xl font-semibold mb-2">Bird Voice Analyzer</h3>
+            <p className="text-gray-600 mb-4">AI Audio Classification</p>
+            <p className="text-gray-700 mb-4">
+              AI model that identifies bird species from audio recordings using advanced audio processing.
+            </p>
+          </Card>
+
+          <Card className="p-6 glass hover-scale">
+            <h3 className="text-xl font-semibold mb-2">Lootor AI</h3>
+            <p className="text-gray-600 mb-4">AI Shopping Assistant</p>
+            <p className="text-gray-700 mb-4">
+              Built an AI-powered shopping assistant to find the best product deals across the internet.
             </p>
           </Card>
         </div>
@@ -264,15 +332,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="section-padding bg-gray-50">
-        <h2 className="section-title">Get in Touch</h2>
+      {/* Contact Section - Enhanced */}
+      <section className="section-padding bg-gradient-to-br from-purple-50 to-indigo-50">
+        <h2 className="section-title bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text">Get in Touch</h2>
         <div className="max-w-md mx-auto text-center">
           <p className="text-gray-600 mb-6">
             Feel free to reach out for collaborations or just a friendly chat!
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button asChild variant="default" className="hover-scale">
+            <Button asChild variant="default" className="hover-scale bg-gradient-to-r from-indigo-600 to-purple-600">
               <a href="mailto:kavishmshah2004@gmail.com">
                 <Mail className="mr-2 h-4 w-4" /> Email Me
               </a>
