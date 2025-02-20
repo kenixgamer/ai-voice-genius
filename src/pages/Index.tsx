@@ -3,90 +3,76 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Linkedin, Mail, Twitter, Youtube, Phone } from "lucide-react";
+import { SplineScene } from "@/components/ui/splite";
+import { Spotlight } from "@/components/ui/spotlight";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="section-padding flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center max-w-4xl mx-auto"
-        >
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
-            className="mb-8"
-          >
-            <img
-              src="https://media.licdn.com/dms/image/D4D03AQHh_7PdEKe3ew/profile-displayphoto-shrink_400_400/0/1691841096667?e=1714003200&v=beta&t=Qgy_-iHmXgOSJ2xGhbSBV4G7LN9hKX9Vj-0CwqkNSwQ"
-              alt="Kavish Shah"
-              className="w-32 h-32 rounded-full mx-auto border-4 border-white shadow-xl hover:scale-105 transition-transform duration-300"
-            />
-          </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text"
-          >
-            Kavish Shah
-          </motion.h1>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="text-xl md:text-2xl text-gray-600 mb-6"
-          >
-            Founder & AI Engineer | Generative AI & SaaS Entrepreneur
-          </motion.h2>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="flex flex-wrap justify-center gap-4 mb-8 text-gray-600"
-          >
-            <span className="flex items-center gap-2 bg-white/50 px-4 py-2 rounded-full backdrop-blur-sm">
-              📍 Ahmedabad, India
-            </span>
-            <span className="flex items-center gap-2 bg-white/50 px-4 py-2 rounded-full backdrop-blur-sm">
-              📧 kavishmshah2004@gmail.com
-            </span>
-            <span className="flex items-center gap-2 bg-white/50 px-4 py-2 rounded-full backdrop-blur-sm">
-              📞 +91 8980579954
-            </span>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="flex flex-wrap gap-4 justify-center mb-8"
-          >
-            <Button asChild variant="outline" className="hover-scale bg-white/50 backdrop-blur-sm">
-              <a href="https://www.linkedin.com/in/kavish-on-ai/" target="_blank" rel="noopener noreferrer">
-                <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
-              </a>
-            </Button>
-            <Button asChild variant="outline" className="hover-scale bg-white/50 backdrop-blur-sm">
-              <a href="https://x.com/Kavish_On_AI" target="_blank" rel="noopener noreferrer">
-                <Twitter className="mr-2 h-4 w-4" /> Twitter
-              </a>
-            </Button>
-            <Button asChild variant="outline" className="hover-scale bg-white/50 backdrop-blur-sm">
-              <a href="https://www.youtube.com/@KavishOnAI" target="_blank" rel="noopener noreferrer">
-                <Youtube className="mr-2 h-4 w-4" /> YouTube
-              </a>
-            </Button>
-            <Button asChild variant="outline" className="hover-scale bg-white/50 backdrop-blur-sm">
-              <a href="mailto:kavishmshah2004@gmail.com">
-                <Mail className="mr-2 h-4 w-4" /> Email Me
-              </a>
-            </Button>
-          </motion.div>
-        </motion.div>
+      {/* Hero Section with 3D Scene */}
+      <section className="min-h-screen relative overflow-hidden">
+        <Card className="w-full min-h-screen bg-black/[0.96] relative overflow-hidden">
+          <Spotlight
+            className="-top-40 left-0 md:left-60 md:-top-20"
+            fill="white"
+          />
+          
+          <div className="flex h-full flex-col lg:flex-row items-center justify-center p-8">
+            {/* Left content */}
+            <motion.div 
+              className="flex-1 relative z-10 text-center lg:text-left mb-8 lg:mb-0"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
+                className="mb-8 relative inline-block"
+              >
+                <img
+                  src="/lovable-uploads/05c5b132-8148-41f7-847e-ed24ec9f8e93.png"
+                  alt="Kavish Shah"
+                  className="w-48 h-48 rounded-full border-4 border-white/20 shadow-xl hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 opacity-20 blur-xl -z-10" />
+              </motion.div>
+              
+              <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neutral-50 to-neutral-400 mb-4">
+                Kavish Shah
+              </h1>
+              <p className="text-xl md:text-2xl text-neutral-400 mb-6">
+                Founder & AI Engineer | Generative AI & SaaS Entrepreneur
+              </p>
+              <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8">
+                <Button asChild variant="outline" className="hover-scale backdrop-blur-sm border-white/20 text-white">
+                  <a href="https://www.linkedin.com/in/kavish-on-ai/" target="_blank" rel="noopener noreferrer">
+                    <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
+                  </a>
+                </Button>
+                <Button asChild variant="outline" className="hover-scale backdrop-blur-sm border-white/20 text-white">
+                  <a href="mailto:kavishmshah2004@gmail.com">
+                    <Mail className="mr-2 h-4 w-4" /> Email Me
+                  </a>
+                </Button>
+                <Button asChild variant="outline" className="hover-scale backdrop-blur-sm border-white/20 text-white">
+                  <a href="tel:+918980579954">
+                    <Phone className="mr-2 h-4 w-4" /> Call Me
+                  </a>
+                </Button>
+              </div>
+            </motion.div>
+
+            {/* Right content - 3D Scene */}
+            <div className="flex-1 h-[500px] w-full relative">
+              <SplineScene 
+                scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+                className="w-full h-full"
+              />
+            </div>
+          </div>
+        </Card>
       </section>
 
       {/* Professional Summary */}
