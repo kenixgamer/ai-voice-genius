@@ -5,8 +5,27 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Linkedin, Mail, Twitter, Youtube, Phone } from "lucide-react";
 import { SplineScene } from "@/components/ui/splite";
 import { Spotlight } from "@/components/ui/spotlight";
+import { useToast } from "@/components/ui/use-toast";
 
 const Index = () => {
+  const { toast } = useToast();
+
+  const showContactInfo = (type: 'email' | 'phone') => {
+    const info = {
+      email: 'kavishmshah2004@gmail.com',
+      phone: '+918980579954'
+    };
+    
+    toast({
+      title: type === 'email' ? 'Email Address' : 'Phone Number',
+      description: info[type],
+      duration: 5000,
+    });
+
+    // Also copy to clipboard
+    navigator.clipboard.writeText(info[type]);
+  };
+
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section with 3D Scene */}
@@ -59,22 +78,18 @@ const Index = () => {
                 <Button 
                   variant="outline" 
                   className="bg-white/10 hover:bg-white/20 text-white border-white/20 backdrop-blur-sm"
-                  asChild
+                  onClick={() => showContactInfo('email')}
                 >
-                  <a href="mailto:kavishmshah2004@gmail.com">
-                    <Mail className="mr-2 h-5 w-5" />
-                    Email Me
-                  </a>
+                  <Mail className="mr-2 h-5 w-5" />
+                  Email Me
                 </Button>
                 <Button 
                   variant="outline" 
                   className="bg-white/10 hover:bg-white/20 text-white border-white/20 backdrop-blur-sm"
-                  asChild
+                  onClick={() => showContactInfo('phone')}
                 >
-                  <a href="tel:+918980579954">
-                    <Phone className="mr-2 h-5 w-5" />
-                    Call Me
-                  </a>
+                  <Phone className="mr-2 h-5 w-5" />
+                  Call Me
                 </Button>
               </div>
             </motion.div>
@@ -368,20 +383,16 @@ const Index = () => {
           <div className="flex flex-wrap justify-center gap-4">
             <Button 
               className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:opacity-90 text-white"
-              asChild
+              onClick={() => showContactInfo('email')}
             >
-              <a href="mailto:kavishmshah2004@gmail.com">
-                <Mail className="mr-2 h-5 w-5" /> Email Me
-              </a>
+              <Mail className="mr-2 h-5 w-5" /> Email Me
             </Button>
             <Button 
               variant="outline" 
               className="bg-white/10 hover:bg-white/20 text-white border-white/20"
-              asChild
+              onClick={() => showContactInfo('phone')}
             >
-              <a href="tel:+918980579954">
-                <Phone className="mr-2 h-5 w-5" /> Call Me
-              </a>
+              <Phone className="mr-2 h-5 w-5" /> Call Me
             </Button>
             <Button 
               variant="outline" 
